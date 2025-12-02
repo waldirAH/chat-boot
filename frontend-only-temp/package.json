@@ -1,0 +1,27 @@
+{
+  "name": "chat-boot",
+  "version": "1.0.0",
+  "description": "Este pequeño proyecto contiene un simulador sencillo que reproduce la lógica del \"vendedor digital\":",
+  "main": "wa_bot.js",
+  "scripts": {
+    "start": "node wa_bot.js",
+    "start:server": "node server.js",
+    "test": "jest --coverage",
+    "demo": "node wa_bot.js --demo",
+    "eval": "node ./bin/eval-cli.js",
+    "serve": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.34.2",
+    "string-similarity": "^4.0.4",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.4.0"
+  }
+}
