@@ -96,4 +96,26 @@ Flujos implementados recientes:
 - Flujo de envío: si el usuario pregunta por envío, el bot pedirá la ubicación (ciudad/distrito/país), la guardará temporalmente en la sesión y confirmará que verificará disponibilidad y precio.
 - Mensaje de Asesoría: actualizado para mostrar el link acortado `agromontes-mvp` y la URL completa.
 
+Despliegue (Railway) - integración con GHCR y CI/CD
+--------------------------------------------------
+Este repo ya genera una imagen Docker que se publica automáticamente en GitHub Container Registry (GHCR) cuando se hace push a `main`.
+
+1) Si deseas que Railway despliegue automáticamente desde GHCR, haz lo siguiente:
+  - Ve a Railway y crea un nuevo proyecto o servicio.
+  - En la sección de Deploy, selecciona **Container registry** y usa la imagen:
+    `ghcr.io/waldirAH/chat-boot:latest`
+  - Si tu imagen es privada, añade las credenciales de GHCR (usuario = `waldirAH`, password = Personal Access Token con `read:packages` scope) en Railway.
+  - Añade variables de entorno necesarias, por ejemplo:
+    - `WHATSAPP_LINK` = `https://wa.me/<tu-numero>`
+    - `PUPPETEER_EXECUTABLE_PATH` = `/usr/bin/chromium` (opcional)
+
+2) Opción de auto-deploy desde GitHub Actions (requiere secrets):
+  - Si quieres que el workflow despliegue automáticamente a Railway tras construir la imagen, guarda los siguientes Secrets en GitHub (repo → Settings → Secrets):
+    - `RAILWAY_API_KEY` (tu PAT o API Key de Railway)
+    - `RAILWAY_PROJECT_ID` (ID del proyecto Railway)
+  - El workflow en `.github/workflows/docker-build-publish.yml` intentará usar estas secrets para invocar la CLI `railway` y ejecutar `railway up --detach` (esto asume que el proyecto ha sido configurado en Railway antes).
+
+3) Recomendación: Mantén la imagen en GHCR y configura Railway para usar esa imagen directamente. Si prefieres, puedo añadir un paso al Action para ejecutar `railway up` solo cuando existen los secrets.
+
+
 Si quieres que implemente una API HTTP (express) que exponga la evaluación del bot via endpoint `POST /evaluate`, dímelo y lo agrego.

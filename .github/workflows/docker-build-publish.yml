@@ -49,3 +49,40 @@ jobs:
         run: |
           echo "If you want Railway to auto-deploy, connect your GitHub repo to Railway or use the GHCR image in your Railway service config."
 
+      # ---------------------------------------------------------------
+      # Optional: Deploy to Railway (if secrets provided)
+      # - Set RAILWAY_API_KEY and RAILWAY_PROJECT_ID in GitHub Secrets
+      # ---------------------------------------------------------------
+      - name: Check for Railway secrets
+        id: railway-check
+        run: |
+          if [ -z "${{ secrets.RAILWAY_API_KEY }}" ] || [ -z "${{ secrets.RAILWAY_PROJECT_ID }}" ]; then
+            echo "no_shipment=true" >> $GITHUB_OUTPUT
+          else
+            echo "no_shipment=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install Railway CLI
+        if: steps.railway-check.outputs.no_shipment == 'false'
+        run: |
+          npm install -g railway
+
+      - name: Railway login
+        if: steps.railway-check.outputs.no_shipment == 'false'
+        env:
+          RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
+        run: |
+          railway login --apiKey $RAILWAY_API_KEY
+
+      - name: Railway deploy
+        if: steps.railway-check.outputs.no_shipment == 'false'
+        env:
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+          RAILWAY_ENV: ${{ secrets.RAILWAY_ENV }}
+        run: |
+          # Use the project ID in Railway and deploy the current repo
+          railway use $RAILWAY_PROJECT_ID
+          # Deploy: this will detect the container settings already configured in Railway,
+          # or you can use 'up' to build/deploy from the repository.
+          railway up --detach
+
