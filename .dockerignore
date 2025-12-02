@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log*
+Dockerfile
+.git
+.wwebjs_auth
+.wwebjs_cache
+coverage
+frontend-only-temp
+*.log
+*.pem
+*.key
+.vscode
+.idea
+.DS_Store
+tmp
+temp
