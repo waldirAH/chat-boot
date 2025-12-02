@@ -1,0 +1,115 @@
+# Node.js
+node_modules/
+npm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# Local env config
+.env
+.env.test
+.env.production
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+logs/*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.env/
+.venv/
+
+# Test / Coverage
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# WhatsApp Web.js session directory - keep out of repo
+.wwebjs_auth/
+.wwebjs_session*
+wa_bot.js
+server.js
+bot_simulator.py
+server.log
+.wwebjs_cache/
+
+# Build output
+dist/
+build/
+
+# Local environment and editors
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Misc
+*.swp
+*~
+
+# Node specific
+.npm/
+.cache/
+.pnp.cjs
+
+# System files
+.DS_Store
+
+# Ignore generated Chrome/puppeteer profiles (if any)
+chrome-user-data/
+
+# Keep any zipped releases or large binaries out
+*.zip
+*.tar.gz
+
+# Ignore debug and coverage artifacts
+*.log
+coverage/
+
+# Ignore secrets or keys
+*.pem
+*.key
+
+# Ignore moveable/temporary files
+tmp/
+temp/
+
+# Ignore local snapshots
+.snapshots/
+
+# End .gitignore
+node_modules/
+package-lock.json
+npm-debug.log
+.env
+
+# whatsapp-web.js auth storage
+.wwebjs_auth/
+
+# Session files
+sessions/
+
+# Local/public keys
+*.key
+*.pem
+
+# VSCode settings
+.vscode/
+
+# Python artifacts (since project is multi-lang)
+__pycache__/
+*.pyc
