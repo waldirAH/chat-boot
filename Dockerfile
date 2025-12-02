@@ -36,4 +36,4 @@ RUN npm install
 COPY . .
 
 # 5. Arrancar el bot
-CMD [ "node", "wa_bot.js" ]
+CMD [ "npm", "start" ]

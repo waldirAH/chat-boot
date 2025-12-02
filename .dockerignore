@@ -6,9 +6,9 @@ Dockerfile
 .wwebjs_cache
 coverage
 frontend-only-temp
-*.log
-*.pem
-*.key
+.log
+.pem
+.key
 .vscode
 .idea
 .DS_Store
