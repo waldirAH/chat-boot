@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Triple Impacto",
+    "category": "Bioestimulante",
+    "functions": ["Energía", "Arranque", "Reactivación de planta estresada"],
+    "keywords": ["energía", "arranque", "reactivación", "planta estresada", "estrés"]
+  },
+  {
+    "name": "Potasio K50",
+    "category": "Nutriente",
+    "functions": ["Llenado de fruto", "Peso", "Maduración"],
+    "keywords": ["peso", "llenado", "maduración", "fruto"]
+  },
+  {
+    "name": "Kanelo Oil",
+    "category": "Fitoprotector",
+    "functions": ["Repelente", "Preventivo", "Orgánico", "Olor a canela"],
+    "keywords": ["repelente", "preventivo", "orgánico", "canela", "aceite"]
+  },
+  {
+    "name": "Sulfa Max 87",
+    "category": "Fitoprotector",
+    "functions": ["Control de ácaros", "Azufre"],
+    "keywords": ["arañita", "ácaro", "ácaros", "arañita roja", "ácaro rojo", "azufre", "plaga"]
+  },
+  {
+    "name": "Omega Oil369",
+    "category": "Fitoprotector",
+    "functions": ["Aceite para control de plagas", "Ahoga la plaga"],
+    "keywords": ["aceite", "afogar", "ahogar", "control plaga", "aceite vegetal"]
+  },
+  {
+    "name": "Amarre 3.5",
+    "category": "Nutriente",
+    "functions": ["Fortalece hojas", "Mejora turgencia"],
+    "keywords": ["caída de hojas", "hojas se caen", "fortalecer", "turgencia", "hoja"]
+  }
+]
